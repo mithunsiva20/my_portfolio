@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mithun S | Portfolio</title>
+<meta name="description" content="Portfolio of Mithun S, aspiring software developer.">
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+    --text: #1c1c1e;
+    --muted: #5f6368;
+    --accent: #2563eb;
+    --border: #e4e4e0;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1115;
+      --surface: #171a21;
+      --text: #ececf1;
+      --muted: #9aa0a6;
+      --accent: #60a5fa;
+      --border: #272b35;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1115;
+    --surface: #171a21;
+    --text: #ececf1;
+    --muted: #9aa0a6;
+    --accent: #60a5fa;
+    --border: #272b35;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px)); }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+  section { padding: 4rem 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+  h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+  .muted { color: var(--muted); }
+
+  /* Navigation */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .brand { font-weight: 700; color: var(--text); }
+  .nav-links { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+  .nav-links a { color: var(--muted); font-size: 0.95rem; }
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+  /* Hero */
+  .hero { padding: 6rem 0 4rem; border-top: none; }
+  .hero .eyebrow { color: var(--accent); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.85rem; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.15; margin: 0.6rem 0 1rem; }
+  .hero p { max-width: 36rem; color: var(--muted); font-size: 1.1rem; }
+  .btn {
+    display: inline-block;
+    margin-top: 1.75rem;
+    margin-right: 0.6rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .btn.solid { background: var(--accent); color: #fff; }
+  .btn:hover { text-decoration: none; opacity: 0.9; }
+
+  /* Cards and grids */
+  .grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+  }
+  .card p { color: var(--muted); font-size: 0.95rem; margin-top: 0.4rem; }
+  .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+
+  /* Skills */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+  .tag {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+
+  /* Project links */
+  .card .links { margin-top: 0.9rem; font-size: 0.92rem; font-weight: 600; }
+
+  /* Contact */
+  .contact-list { list-style: none; display: grid; gap: 0.75rem; }
+  .contact-list li { display: flex; gap: 0.75rem; align-items: baseline; }
+  .contact-list span.label { width: 80px; color: var(--muted); font-size: 0.9rem; flex-shrink: 0; }
+
+  footer { border-top: 1px solid var(--border); padding: 2rem 0; color: var(--muted); font-size: 0.9rem; text-align: center; }
+
+  @media (max-width: 640px) {
+    .nav-links { gap: 0.8rem; font-size: 0.85rem; }
+    .brand { font-size: 0.95rem; }
+    section { padding: 3rem 0; }
+    .hero { padding: 4rem 0 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">Mithun S</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="container">
+      <p class="eyebrow">Welcome</p>
+      <h1>Mithun S<br><span class="muted">Aspiring Software Developer</span></h1>
+      <p>I build practical software and keep learning every day, with a focus on Java, C, and problem solving.</p>
+      <a class="btn solid" href="#projects">View my work</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p class="muted">
+        I am a computer technology graduate who enjoys turning ideas into working software. I am
+        currently building my foundation in programming, data structures, and problem solving, and I
+        am eager to contribute to a team where I can keep growing. Outside of code, I value teamwork,
+        clear communication, and exploring how AI tools can make work more efficient.
+      </p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>B.Sc. Computer Technology</h3>
+        <p class="meta">KPR College of Arts, Science and Research (KPRCAS)</p>
+        <p>CGPA: 7.5</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Programming</h3>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">C</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <div class="tags">
+            <span class="tag">AI Tools</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Soft Skills</h3>
+          <div class="tags">
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Teamwork</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <p class="meta">Project 01</p>
+          <h3>IronLog – Fast Lift</h3>
+          <p>A fitness tracking project for logging workouts quickly and keeping track of lifting progress.</p>
+          <div class="links"><a href="#">View project →</a></div>
+        </article>
+        <article class="card">
+          <p class="meta">Project 02</p>
+          <h3>LeetCode Tracker</h3>
+          <p>A tool to track coding problems solved, categorize them by difficulty and topic, and monitor progress over time.</p>
+          <div class="links"><a href="#">View project →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="container">
+      <h2>Certifications</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>AI Workshop</h3>
+          <p>Hands-on training in applying artificial intelligence concepts and tools.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Marketing</h3>
+          <p>Coursework covering online marketing fundamentals and digital presence.</p>
+        </div>
+        <div class="card">
+          <h3>Technical Certifications</h3>
+          <p>Additional technical courses completed to strengthen programming and computing knowledge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span class="label">Email</span><a href="mailto:your.email@example.com">your.email@example.com</a></li>
+        <li><span class="label">Phone</span><a href="tel:+910000000000">+91 00000 00000</a></li>
+        <li><span class="label">GitHub</span><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></li>
+        <li><span class="label">LinkedIn</span><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Mithun S. Built with HTML and CSS.</p>
+  </div>
+</footer>
+
+</body>
+</html>
